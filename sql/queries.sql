@@ -3,22 +3,23 @@
 
 SELECT 
 	verticales.nombre,
-	COUNT(verticles.id_vertical)
+	COUNT(verticales.id_vertical)
 FROM alumnos 
 INNER JOIN matriculas ON alumnos.id_alumno = matriculas.id_alumno
 INNER JOIN clases ON matriculas.id_clase = clases.id_clase
 INNER JOIN verticales ON clases.id_vertical = verticales.id_vertical
-GROUP BY verticales.nombre
+GROUP BY verticales.nombre;
 
 
 
 -- Cuantos profesores hay en cada clase?
 SELECT 
-	id_clase,
-	COUNT (id_profesor)
+	clases.id_clase,
+	COUNT(claustro.id_profesor)
 FROM claustro
-GROUP BY claustro.id_clase
-ORDER BY claustro.id_clase
+RIGHT JOIN clases ON clases.id_clase = claustro.id_clase
+GROUP BY clases.id_clase
+ORDER BY clases.id_clase;
 
 
 -- Cuantos profesores dieron clase en febrero?
@@ -26,7 +27,7 @@ SELECT
 	COUNT(*)
 FROM claustro
 INNER JOIN clases ON clases.id_clase = claustro.id_clase
-WHERE LOWER(promocion) LIKE '%febrero%'
+WHERE LOWER(promocion) LIKE '%febrero%';
 
 
 -- ¿Cuáles son los alumnos de Madrid?
@@ -38,7 +39,7 @@ FROM alumnos
 INNER JOIN matriculas  ON alumnos.id_alumno = matriculas.id_alumno
 INNER JOIN clases ON matriculas.id_clase = clases.id_clase
 INNER JOIN campus  ON clases.id_campus = campus.id_campus
-WHERE campus.ciudad = 'Madrid'
+WHERE campus.ciudad = 'Madrid';
 
 
 --En que campus obtienen mejores resultados los alumnos?
