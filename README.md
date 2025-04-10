@@ -17,11 +17,11 @@ El objetivo principal ha sido convertir una tabla plana con múltiples campos en
 
 1. **Modelo Entidad-Relación (E/R)**  
    Diseño visual de las entidades, atributos y relaciones.  
-   ![Modelo ER](./ruta_a_tu_modelo_er.png)
+   ![Modelo ER](modelos/modelo_entidad_relacion.png)
 
 2. **Modelo Lógico**  
    Transformación del modelo E/R a un modelo lógico con claves primarias, foráneas y relaciones normalizadas.  
-   ![Modelo Lógico](./ruta_a_tu_modelo_logico.png)
+   ![Modelo Lógico](modelos/modelo_logico.png)
 
 3. **Normalización de Datos**  
    Aplicación de las formas normales necesarias para garantizar la integridad y eliminar redundancia.
