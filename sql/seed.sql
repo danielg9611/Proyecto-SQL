@@ -28,7 +28,6 @@ CREATE TABLE clases (
   id_clase serial NOT NULL PRIMARY KEY, 
   fechaComienzo varchar(20) NOT NULL, 
   promocion varchar(15) NOT NULL,
-  modalidad varchar(15) NOT NULL,
   id_campus int,
   id_vertical int,
   FOREIGN KEY (id_campus) REFERENCES campus(id_campus),
@@ -106,20 +105,16 @@ VALUES
 ('FullStack');
 
 -- clase 
-INSERT INTO clases(id_campus, id_vertical, fechaComienzo, promocion, modalidad)
+INSERT INTO clases(id_campus, id_vertical, fechaComienzo, promocion)
 VALUES
 
-(1, 1, '18/09/2023', 'Septiembre', 'Presencial'),
-(1, 1, '18/09/2023', 'Septiembre', 'Online'),
+(1, 1, '18/09/2023', 'Septiembre'),
 
-(1, 1, '12/02/2024', 'Febrero', 'Presencial'),
-(1, 1, '12/02/2024', 'Febrero', 'Online'),
+(1, 1, '12/02/2024', 'Febrero'),
 
-(1, 2, '18/09/2023', 'Septiembre', 'Presencial'),
-(1, 2, '18/09/2023', 'Septiembre', 'Online'),
+(1, 2, '18/09/2023', 'Septiembre'),
 
-(2, 2, '12/02/2024', 'Febrero', 'Presencial'),
-(2, 2, '12/02/2024', 'Febrero', 'Online');
+(2, 2, '12/02/2024', 'Febrero'),
 
 -- profesores 
 INSERT INTO profesores(nombre)
@@ -591,9 +586,9 @@ VALUES
 
 (1,1,'TA'),
 (2,1,'TA'),
-(3,5,'TA'),
-(5,7,'TA'),
+(3,3,'TA'),
+(5,4,'TA'),
 (7,1,'TA'),
-(8,8,'LI'),
-(9,6,'LI'),
-(10,2,'LI');
+(8,4,'LI'),
+(9,3,'LI'),
+(10,1,'LI')
